@@ -1,0 +1,14 @@
+CREATE TABLE `event_history` (
+	`db` CHAR(64) NOT NULL DEFAULT '',
+	`name` CHAR(64) NOT NULL DEFAULT '',
+	`start` DATETIME NULL DEFAULT NULL,
+	`end` DATETIME NULL DEFAULT NULL,
+	`sqlstate` CHAR(64) NULL DEFAULT NULL,
+	`errno` CHAR(64) NULL DEFAULT NULL,
+	`message_text` VARCHAR(500) NULL DEFAULT NULL,
+	`record_time` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	INDEX `idx1` (`db`, `name`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;

@@ -1,0 +1,1 @@
+select case variable_value when 'ON' then 'O' else '' end from information_schema.GLOBAL_STATUS where variable_name='SLAVE_RUNNING';
