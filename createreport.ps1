@@ -142,6 +142,10 @@ if ((Get-Content .\out.html) -ne "")
 		<th>Master Log File</th>
 		<th>Relay Master Log File</th>
 		<th>Slave IO State</th>
+		<th>Slave IO Running</th>
+		<th>Slave SQL Running</th>
+		<th>Relay Log Space</th>
+		<th>Seconds Behind Master</th>
 		<th>Last Errno</th>
 		<th>Last Error</th>
 		<th>Last IO Errno</th>
@@ -152,7 +156,7 @@ if ((Get-Content .\out.html) -ne "")
 
 		$stat = [string[]](Get-Content .\out.html)
 
-		$Html = $Html + "<tr><td>" + $stat[2] + "</td><td>" + $stat[6] + "</td><td>" + $stat[10] + "</td><td>" + $stat[1] + "</td><td>"
+		$Html = $Html + "<tr><td>" + $stat[2] + "</td><td>" + $stat[6] + "</td><td>" + $stat[10] + "</td><td>" + $stat[1] + "</td><td>" + $stat[11] + "</td><td>" + $stat[12] + "</td><td>" + $stat[23] + "</td><td>" + $stat[33] + "</td><td>"
 
                 if ($stat[19] -eq "0") {$Html = $Html + $stat[19] + "</td><td>" + $stat[20] + "</td><td>"}
                 else {$Html = $Html + "<div class=""Critical"">" + $stat[19] + "</div></td><td><div class=""Critical"">" + $stat[20] + "</div></td><td>"}
